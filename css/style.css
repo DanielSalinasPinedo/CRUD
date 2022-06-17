@@ -1,0 +1,51 @@
+body{
+    background: rgb(0, 81, 255);
+    text-align: center;
+}
+
+.crud-table{
+    margin: auto;
+}
+
+td,th{
+    padding: 5px;
+}
+
+.delete:hover{
+    background: rgb(141, 28, 28);
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.enviar{
+    margin: 4px;
+    padding: 0 50px 0 50px;
+    border: 1px solid black;
+    background: rgb(206, 206, 206);
+}
+
+input{
+    margin: 10px;
+}
+
+.enviar:hover,.edit:hover{
+    cursor: pointer;
+    background: green;
+    border: 1px solid black;
+}
+
+#name,#coste{
+    background: none;
+    border: 0;
+    border-bottom: 2px solid black;
+}
+
+#name:focus,#coste:focus{
+    outline: none;
+    background: green;
+    border-bottom: 2px solid rgb(141, 28, 28);
+}
+
+#name::placeholder, #coste::placeholder{
+    color: black;
+}
