@@ -133,16 +133,21 @@
                     }                 
                 }else{
                     //Update- PUT
-                    ajax({
-                        url:`http://localhost:5555/santos/${e.target.id.value}`,
-                        method:"PUT",
-                        success:(res) => location.reload(),
-                        error:() => $form.insertAdjacentHTML("afterend",`<p><b>${err}</b></p>`),
-                        data:{
-                            nombre: e.target.nombre.value,
-                            constelacion: e.target.constelacion.value
-                        }
-                    })
+                    if(e.target.nombre.value.replace(/ /g, "").length != 0 && e.target.constelacion.value.replace(/ /g, "").length != 0){
+                        ajax({
+                            url:`http://localhost:5555/santos/${e.target.id.value}`,
+                            method:"PUT",
+                            success:(res) => location.reload(),
+                            error:() => $form.insertAdjacentHTML("afterend",`<p><b>${err}</b></p>`),
+                            data:{
+                                nombre: e.target.nombre.value,
+                                constelacion: e.target.constelacion.value
+                            }
+                        })
+                    }
+                    else{
+                        alert("Ingrese un dato valido en el campo")
+                    } 
                 }
             }
         })
